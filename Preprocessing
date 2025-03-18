@@ -1,0 +1,20 @@
+dataframe = pd.read_csv(r'D:\Courses\Beginner to Advanced - how to become a data scientist\[TutsNode.net] - Beginner to Advanced - how to become a data scientist\01 - Course introduction\005 transit-segments.csv', 
+               index_col = 'name')
+
+datasetnew = pd.read_csv(r'D:\Courses\Beginner to Advanced - how to become a data scientist\[TutsNode.net] - Beginner to Advanced - how to become a data scientist\01 - Course introduction\005 transit-segments.csv', 
+                         usecols = ['name','min_sog','max_sog'])
+
+fraud = pd.read_csv('D:\Downloads\Fraud.csv', nrows=100000)
+
+df.head()
+df.tail()
+
+df.shape
+
+group = ipl.groupby('city')
+group.size()
+group.sum()
+group['win_by_runs'].sum()
+group[['win_by_runs','win_by_wickets']].sum()
+bangalore = group.get_group('Bangalore')['win_by_runs'].sum()
+bangalore
