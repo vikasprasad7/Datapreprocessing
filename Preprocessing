@@ -18,3 +18,166 @@ group['win_by_runs'].sum()
 group[['win_by_runs','win_by_wickets']].sum()
 bangalore = group.get_group('Bangalore')['win_by_runs'].sum()
 bangalore
+
+newgroup = ipl.groupby(['city','toss_decision']).size()
+newgroup
+group.agg({'win_by_runs':'sum','win_by_wickets':'mean'})
+group.agg({'win_by_runs':['sum','mean'],'win_by_wickets':'mean'})
+
+df.describe()
+
+df.describe
+
+df['Age'].values
+
+df.index
+
+df['Age'].index
+
+df.dtypes
+
+y=y.astype(int)
+
+df['Age'].dtype
+
+df['Age'].sum()
+
+df1['Survived'].product(), df[['SibSp','Survived']].product()
+
+df['Age'].mean()
+
+len(df['Age'])
+
+sorted(df['Age'])
+
+df['Age'].sort_values(ascending=False)
+
+80.0 in df['Age'].values
+
+df['Age'].std()
+
+df['Age'].max()
+
+df['Age'].min()
+
+df['Age'].count()
+
+df['Age'].idxmin()
+
+df['Age'].idxmax()
+
+df.columns
+
+df.axes
+
+df.info()
+
+df.dtypes
+
+df.columnName
+
+df.Parch.head()
+
+df.Parch[:10]
+
+df.Parch[880:]
+
+df['Country'] = 'USA'
+
+df.insert(3, column='Special Country', value='Canada')
+
+df.drop('Special Country', axis=1)
+
+df.Parch.add(10) or df.Parch + 10
+
+df.Parch.sub(10) or df.Parch - 10
+
+df.Parch.mul(10) or df.Parch * 10
+
+df.Parch.div(10) or df.Parch / 10
+
+df.isnull().sum()
+
+pokemon[pokemon['Type 2'].isnull()]
+
+pokemon.loc[pokemon['Type 2'].isnull(), "Type 2"] = 'Flying'
+pokemon.isnull().sum()
+
+df['Survived'].value_counts()
+
+chosen = ['seg_length','avg_sog','max_sog','min_sog']
+dataset[chosen].head()
+df = dataset[chosen]
+
+chosen = ['seg_length','avg_sog','max_sog','min_sog']
+df = dataset[chosen]
+df.head()
+
+titanic_female = titanic[titanic['Sex']=='female']
+titanic_female.head()
+
+filter1 = titanic['Sex']=='female'
+filter2 = titanic['Embarked']=='C'
+titanic_female_C = titanic[filter1 & filter2]
+titanic_female_C.head(10)
+
+filter3 = titanic['Sex'] == 'male'
+filter4 = titanic['Pclass']<3
+titanic_male_pclass = titanic[filter3 & filter4]
+titanic_male_pclass.head(10)
+
+filter3 = titanic['Sex'] == 'male'
+filter4 = titanic['Pclass']<3
+titanic_male_pclass = titanic[filter3 | filter4]
+titanic_male_pclass.head(10)
+
+titanic.drop(labels=['PassengerId','Name','Ticket','Cabin','Embarked'], axis=1, inplace=True)
+titanic.head()
+
+convertnumeric = {'male':1,'female':0}
+titanic.Sex = titanic.Sex.map(convertnumeric)
+titanic.head()
+
+pokemon['Legendary'] = pokemon['Legendary'].map({False:0,True:1})
+
+titanic.fillna(value = titanic.Age.mean(), inplace=True)
+titanic.isnull().sum()
+
+newdset2 = pd.read_csv(r'D:\Courses\Beginner to Advanced - how to become a data scientist\[TutsNode.net] - Beginner to Advanced - how to become a data scientist\01 - Course introduction\005 transit-segments.csv', 
+                       parse_dates=['st_time'])
+
+newdset2.end_time = pd.to_datetime(newdset2.end_time)
+
+newdset2[newdset2['st_time'].between('2011-01-01','2011-12-31')]
+
+newdset3 = newdset2
+newdset3.drop_duplicates(subset=['name'], keep=False)
+
+newdset2['name'].unique()
+
+newdset2['segment'].nunique()
+
+pokemon.set_index('Name', inplace=True)
+
+pokemon.reset_index(drop=False, inplace=True)
+
+'Mew' in pokemon.index
+
+pokemon.loc['Venusaur']
+
+pokemon.loc['Bulbasaur':'Charmander'] 
+
+pokemon.loc[['Bulbasaur','Charmander']]
+
+pokemon.loc[['Bulbasaur','Charmander'],'Type 1']
+
+pokemon.loc[['Bulbasaur','Charmander'],'Type 1':'HP']
+
+pokemon.loc[['Bulbasaur','Charmander'],['Attack','Defense','Speed']]
+
+pokemon2 = pd.read_csv(r'D:\Courses\Beginner to Advanced - how to become a data scientist\[TutsNode.net] - Beginner to Advanced - how to become a data scientist\01 - Course introduction\005 Pokemon.csv',
+                       encoding='ISO-8859-1')
+
+pokemon2.loc[3]
+
+pokemon2.loc[3,'Attack':'Defense']
